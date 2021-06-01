@@ -8,6 +8,8 @@ rootPath = __dirname;
 
 const app = express();
 
+const port = process.env.PORT || 3000;
+
 app.set('view engine','hbs');
 app.use(express.static(rootPath));
 
@@ -26,6 +28,7 @@ app.get('',(req, res)=> {
   res.sendFile(path.join(__dirname, './views/app.hbs'));
 })
 
-app.listen(3000, () => {
-   console.log("running from 3000 server");
+
+app.listen(port, () => {
+   console.log("running from "+ port+" server");
 })
